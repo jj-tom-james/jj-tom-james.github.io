@@ -1,0 +1,1 @@
+body:has(.post .post-header){background:linear-gradient(rgba(255,255,255,0.82),rgba(255,255,255,0.82)),url("/assets/img/couple_bg.jpg") center/cover fixed no-repeat}body:has(.post .post-header) .post{background:hsla(0,0,100%,.72);padding:2rem;border-radius:18px;backdrop-filter:blur(4px)}
