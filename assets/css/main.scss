@@ -38,6 +38,191 @@
 @use "font-awesome/solid";
 @use "font-awesome/regular";
 
+body {
+  --site-ink: #171512;
+  --site-muted: #6f6a61;
+  --site-paper: #f7f1e8;
+  --site-panel: rgba(255, 252, 246, 0.88);
+  --site-line: rgba(32, 28, 22, 0.14);
+  --site-accent: #c14f2d;
+  --site-accent-2: #0f766e;
+  --site-warm: #d99a2b;
+
+  background:
+    linear-gradient(90deg, rgba(23, 21, 18, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(23, 21, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(115deg, rgba(247, 241, 232, 0.98), rgba(237, 227, 214, 0.94) 48%, rgba(246, 239, 229, 0.98));
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
+  color: var(--site-ink);
+}
+
+html[data-theme="dark"] body {
+  --site-ink: #f5efe5;
+  --site-muted: #b7ad9d;
+  --site-paper: #181714;
+  --site-panel: rgba(25, 23, 19, 0.9);
+  --site-line: rgba(245, 239, 229, 0.16);
+  --site-accent: #f08b5f;
+  --site-accent-2: #5fd0c6;
+  --site-warm: #e4b44e;
+
+  background:
+    linear-gradient(90deg, rgba(245, 239, 229, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(245, 239, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(115deg, rgba(17, 16, 14, 0.98), rgba(36, 30, 24, 0.95) 48%, rgba(16, 18, 17, 0.98));
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
+}
+
+.navbar {
+  background: rgba(255, 252, 246, 0.84) !important;
+  border-bottom: 1px solid var(--site-line);
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="dark"] .navbar {
+  background: rgba(25, 23, 19, 0.86) !important;
+}
+
+.navbar-brand {
+  color: var(--site-ink) !important;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-weight: 700;
+}
+
+.navbar .nav-link {
+  color: var(--site-muted) !important;
+  font-family: "Courier New", "Noto Sans Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--site-accent) !important;
+}
+
+.post {
+  background: var(--site-panel);
+  border: 1px solid var(--site-line);
+  box-shadow: 0 22px 64px rgba(23, 21, 18, 0.1);
+  padding: clamp(1.15rem, 3vw, 2.25rem);
+  backdrop-filter: blur(12px);
+}
+
+.post-header {
+  border-bottom: 1px solid var(--site-line);
+  margin-bottom: clamp(1.2rem, 3vw, 2rem);
+  padding-bottom: 1rem;
+}
+
+.post-title {
+  color: var(--site-ink);
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(1.9rem, 4vw, 3.15rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.post-description,
+.post-header .desc {
+  color: var(--site-muted);
+  font-size: clamp(0.92rem, 1.7vw, 1.04rem);
+  line-height: 1.65;
+}
+
+.post article {
+  color: var(--site-ink);
+}
+
+.post article h2 {
+  border-left: 3px solid var(--site-accent);
+  color: var(--site-ink);
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+  line-height: 1.3;
+  margin-top: 2rem;
+  padding-left: 0.85rem;
+}
+
+.post article h3 {
+  color: var(--site-ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.post article p,
+.post article li {
+  color: var(--site-muted);
+  line-height: 1.76;
+}
+
+.post article strong {
+  color: var(--site-ink);
+}
+
+.post article ul {
+  padding-left: 1.15rem;
+}
+
+.post article li::marker {
+  color: var(--site-accent-2);
+}
+
+.projects h2.category {
+  border-bottom: 1px solid var(--site-line);
+  color: var(--site-accent);
+  font-family: "Courier New", "Noto Sans Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.projects .row {
+  row-gap: 1rem;
+}
+
+.projects .card {
+  background: rgba(255, 252, 246, 0.62);
+  border: 1px solid var(--site-line);
+  border-radius: 8px;
+  box-shadow: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+html[data-theme="dark"] .projects .card {
+  background: rgba(24, 22, 19, 0.66);
+}
+
+.projects .card:hover {
+  border-color: rgba(193, 79, 45, 0.52);
+  box-shadow: 0 16px 36px rgba(23, 21, 18, 0.12);
+  transform: translateY(-3px);
+}
+
+.projects .card .card-title {
+  color: var(--site-ink);
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.projects .card .card-text {
+  color: var(--site-muted);
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
 body:has(.home-dashboard) {
   --home-ink: #171512;
   --home-muted: #6f6a61;
@@ -100,9 +285,9 @@ body:has(.home-dashboard) .post-header {
 body:has(.home-dashboard) .post-title {
   color: var(--home-ink);
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(2.1rem, 6vw, 4.4rem);
+  font-size: clamp(1.9rem, 4.6vw, 3.25rem);
   font-weight: 700;
-  line-height: 0.96;
+  line-height: 1.05;
 }
 
 body:has(.home-dashboard) .post-header .desc {
@@ -157,9 +342,9 @@ body:has(.home-dashboard) .post-header .desc {
 .hero-copy h2 {
   color: var(--home-ink);
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(1.8rem, 5vw, 3.25rem);
+  font-size: clamp(1.45rem, 3.8vw, 2.45rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.16;
   margin-bottom: 1rem;
 }
 
@@ -423,6 +608,10 @@ body:has(.home-dashboard) .contact-note {
 }
 
 @media (max-width: 640px) {
+  .post-title {
+    font-size: clamp(1.7rem, 9vw, 2.35rem);
+  }
+
   body:has(.home-dashboard) .post {
     border-left: 0;
     border-right: 0;
